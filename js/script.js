@@ -107,9 +107,14 @@ const appData = {
         });
     },
     addScreenblock: function () {
-        const cloneScreen = screens[0].cloneNode(true);
+        screens = document.querySelectorAll('.screen');
+
+        const cloneScreen = screens[screens.length - 1].cloneNode(true);
+
+        cloneScreen.querySelector('input').value = '';
 
         screens[screens.length - 1].after(cloneScreen);
+
     },
     addPrices: function () {
 

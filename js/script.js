@@ -16,7 +16,6 @@ const countRollback = document.getElementsByClassName('total-input')[4];
 
 let screens = document.querySelectorAll('.screen');
 
-
 const appData = {
 
     title: '',
@@ -109,7 +108,7 @@ const appData = {
     addScreenblock: function () {
         screens = document.querySelectorAll('.screen');
 
-        const cloneScreen = screens[screens.length - 1].cloneNode(true);
+        const cloneScreen = screens[0].cloneNode(true);
 
         cloneScreen.querySelector('input').value = '';
 

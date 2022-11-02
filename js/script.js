@@ -40,8 +40,11 @@ const appData = {
     addTitle: function () {
         document.title = titleName.textContent;
     },
-    start: function () {
+    redefination: function () {
         screens = document.querySelectorAll('.screen');
+    },
+    start: function () {
+        appData.redefination();
         for (let i = 0; i < screens.length; i++) {
             if (screens[i].querySelector('select').value === '' ||
                 screens[i].querySelector('input').value === '') {
@@ -68,7 +71,6 @@ const appData = {
         appData.rollback = range.value;
     },
     addScreens: function () {
-        screens = document.querySelectorAll('.screen');
         screens.forEach(function (screen, index) {
             const select = screen.querySelector('select');
             const input = screen.querySelector('input');
@@ -106,7 +108,7 @@ const appData = {
         });
     },
     addScreenblock: function () {
-        screens = document.querySelectorAll('.screen');
+        appData.redefination();
 
         const cloneScreen = screens[0].cloneNode(true);
 

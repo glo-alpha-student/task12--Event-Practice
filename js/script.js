@@ -51,7 +51,6 @@ const appData = {
             }
         }
 
-
         appData.addScreens();
         appData.addServices();
         appData.addPrices();
@@ -135,7 +134,6 @@ const appData = {
 
         appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback / 100));
     },
-
 
 };
 

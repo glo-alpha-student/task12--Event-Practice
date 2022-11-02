@@ -30,6 +30,7 @@ const appData = {
     rollback: 0,
     servicePercentPrice: 0,
     totalScreen: 0,
+
     init: function () {
         appData.addTitle();
 
@@ -40,11 +41,8 @@ const appData = {
     addTitle: function () {
         document.title = titleName.textContent;
     },
-    redefination: function () {
-        screens = document.querySelectorAll('.screen');
-    },
+
     start: function () {
-        appData.redefination();
         for (let i = 0; i < screens.length; i++) {
             if (screens[i].querySelector('select').value === '' ||
                 screens[i].querySelector('input').value === '') {
@@ -53,10 +51,10 @@ const appData = {
             }
         }
 
+
         appData.addScreens();
         appData.addServices();
         appData.addPrices();
-        // appData.logger();
         appData.showResult();
     },
     showResult: function () {
@@ -108,13 +106,14 @@ const appData = {
         });
     },
     addScreenblock: function () {
-        appData.redefination();
 
         const cloneScreen = screens[0].cloneNode(true);
 
         cloneScreen.querySelector('input').value = '';
 
         screens[screens.length - 1].after(cloneScreen);
+
+        screens = document.querySelectorAll('.screen');
 
     },
     addPrices: function () {
@@ -136,11 +135,7 @@ const appData = {
 
         appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback / 100));
     },
-    logger: function () {
-        console.log(appData.fullPrice);
-        console.log(appData.servicePercentPrice);
-        console.log(appData.screens);
-    },
+
 
 };
 
